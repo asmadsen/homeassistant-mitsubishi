@@ -99,9 +99,8 @@ class MitsubishiClimate(MitsubishiEntity, ClimateEntity):
         HVACMode.DRY,
         HVACMode.FAN_ONLY,
     ]
-    _attr_fan_modes = [FAN_AUTO, "1", "2", "3", "4", "5"]
-    _attr_swing_modes = list(VERTICAL_WIND_OPTIONS.keys())
-    _attr_swing_horizontal_modes = list(HORIZONTAL_WIND_OPTIONS.keys())
+    _attr_fan_modes = [FAN_AUTO, FAN_LOW, FAN_MEDIUM, FAN_HIGH, "full"]
+    _attr_swing_modes = [SWING_OFF, SWING_VERTICAL, SWING_HORIZONTAL, SWING_BOTH]
 
     _attr_supported_features = (
         ClimateEntityFeature.TARGET_TEMPERATURE
